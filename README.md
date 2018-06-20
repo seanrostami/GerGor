@@ -11,12 +11,12 @@ sean.rostami@gmail.com
 
 SYSTEM REQUIREMENTS:
 1) Python, either v2 or v3
-2) GTK+ for Python (more correctly, the PyGObject* package)
+2) GTK+ for Python (more correctly, the PyGObject package)
+(it is usually annoying to install PyGObject...)
 3) the Pillow package for Python, a continuation of the classic PIL library
-4) playable** on Linux, Windows, Mac if above requirements are satisfied
+4) playable on Linux, Windows, Mac if above requirements are satisfied
+(see the bottom of this README for a list of actual tests)
 5) seems to require about 25 MB of RAM at all times
-* it is usually annoying to install PyGObject...
-** see the bottom of this README for a list of actual tests
 
 
 FILES:
@@ -33,13 +33,13 @@ FILES:
 
 HOW TO START GAME:
 1) each player puts all of the above files into a single but arbitrary directory
-2) each player runs GERGOR.py from any* working directory (the other .py files should be in the same directory)
-3) players communicate** to each other their "connection info" (displayed at the top of each game window)
-4) players enter** their opponent's connection info into the game (near the top of the game window)
+2) each player runs GERGOR.py from any working directory (the other .py files should be in the same directory)
+(each user must have permission to create/read/write/delete a file in both working directories)
+3) players communicate to each other their "connection info" (displayed at the top of each game window)
+4) players enter their opponent's connection info into the game (near the top of the game window)
+(if both players are using the same computer, the only possibility at present, then connection info can be easily copied and pasted from one window to another)
 5) each player presses CONNECT (near the top of the game window)
 6) one player (random) starts, and the players alternate turns thereafter until one wins
-* each user must have permission to create/read/write/delete a file in both working directories
-** if both players are using the same computer, the only possibility at present, then connection info can be easily copied and pasted from one window to another
 (see section "HOW THE PROGRAM OPERATES" below for an explanation of the possibly puzzling steps 3,4,5)
 
 
@@ -91,9 +91,9 @@ CREDITS/ACKNOWLEDGEMENTS:
 ACTUALLY TESTED ON:
 - Ubuntu 16.04 LTS, 4.4.0-128-generic, #154-Ubuntu SMP; Python 3.5.2, pygobject 3.20.0, Pillow 5.1.0
 - Ubuntu 16.04 LTS, 4.4.0-128-generic, #154-Ubuntu SMP; Python 2.7.12, pygobject 3.20.0, Pillow 5.1.0
-- Windows 10 Home, version 1709; Python 2.7.15, PyGObject* 3.24.1, Pillow 5.1.0
-- old Windows 7; Python 2.7.15, PyGObject* 3.24.1, Pillow 5.1.0
-- OS X 10.11.6 (MacBook Pro), Darwin 15.6.0; Python 3.6.5, PyGObject 3.28.3, Pillow 5.0.0**
-- OS X 10.11.6 (MacBook Pro), Darwin 15.6.0; Python 2.7.15, PyGObject 3.28.3, Pillow 5.0.0**
-* sourceforge.net/projects/pygobjectwin32
-** at this time, there seem to be issues with Pillow 5.1 on Macs...
+- Windows 10 Home, version 1709; Python 2.7.15, PyGObject 3.24.1, Pillow 5.1.0
+- old Windows 7; Python 2.7.15, PyGObject 3.24.1, Pillow 5.1.0
+(sourceforge.net/projects/pygobjectwin32)
+- OS X 10.11.6 (MacBook Pro), Darwin 15.6.0; Python 3.6.5, PyGObject 3.28.3, Pillow 5.0.0
+- OS X 10.11.6 (MacBook Pro), Darwin 15.6.0; Python 2.7.15, PyGObject 3.28.3, Pillow 5.0.0
+(at this time, there seem to be issues with Pillow 5.1 on Macs...)
