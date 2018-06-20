@@ -1,5 +1,5 @@
 # GerGor
-GerGor is a competitive two-player game inspired by the famous "[Gershgorin Circle Theorem](en.wikipedia.org/wiki/Gershgorin_circle_theorem)" from Linear Algebra. Each player has a collection of discs in a 2-dimensional plane; by quickly estimating sizes and positions of certain numbers in a matrix, and making an appropriate choice of entry, you transform your discs and try to capture your opponent's. This prototype is written in Python, executes correctly as-is in both version 2.X (for reasonably high X) and version 3.X of Python, and runs on Linux, Windows, and Mac. The GUI is created with [GTK\+](en.wikipedia.org/wiki/GTK+) and the charming graphics are created with the Pillow fork of the classic [PIL](en.wikipedia.org/wiki/Python_Imaging_Library) library.
+GerGor is a competitive two-player game inspired by the famous "[Gershgorin Circle Theorem](https://en.wikipedia.org/wiki/Gershgorin_circle_theorem)" from Linear Algebra. Each player has a collection of discs in a 2-dimensional plane; by quickly estimating sizes and positions of certain numbers in a matrix, and making an appropriate choice of entry, you transform your discs and try to capture your opponent's. This prototype is written in Python, executes correctly as-is in both version 2.X (for reasonably high X) and version 3.X of Python, and runs on Linux, Windows, and Mac. The GUI is created with [GTK\+](https://en.wikipedia.org/wiki/GTK+) and the charming graphics are created with the Pillow fork of the classic [PIL](https://en.wikipedia.org/wiki/Python_Imaging_Library) library.
 
 
 AUTHOR(S):
@@ -38,7 +38,7 @@ FILES:
 9) gergorpaintable.py   (class)
 
 
-HOW TO START GAME:
+HOW TO "INSTALL"/START GAME:
 
 1) each player puts all of the above files into a single but arbitrary directory
 2) each player runs GERGOR.py from any\* working directory
@@ -64,7 +64,6 @@ RULES OF THE GAME:
 - If a player has only one disc remaining at the start of a turn, there is a random chance that the disc will acquire "Adrenaline" for that turn. If a disc has Adrenaline, the rules for capture change: for an Adrenalized disc to capture any other disc. the former must contain only the center of the latter (for convenience, the centers of discs are displayed to the players whenever Adrenaline is present). 
 - To avoid convergence to highly static situations, a random non-focus uncaptured entry in the matrix changes sign at the end of each turn (note that this does not change the current discs' positions/sizes). 
 - There is a non-human player called Autopilot, which can be activated or deactivated via the AUTO button. It is not very intelligent. 
-- The current "phase" of the game is printed at the bottom of the game's window. 
 - Virtually any aspect of the game other than its foundation can be easily changed in the file GERGORCONFIG.py: the various messages displayed to the players, how much time the TIMER allows, the colors appearing in the game, the granularity and speed of animations, the probability of Adrenaline, and many other things.
 
 
@@ -75,8 +74,8 @@ HOW THE PROGRAM OPERATES:
 - Animations are simply rapidly displayed sequences of such images. Most of this is managed by the class GerGorAnimation.
 - There are no sounds. 
 - The numerical/logical data of the MATRIX itself is managed by the class GerGorMatrix, which itself delegates certain responsibilities to the classes GerGorMatrixRow and GerGorMatrixEntry. 
+- The issues required to get simultaneous v2 and v3 compatibility were mostly related to Lists, especially implications of the fact that filter(_,_) in v3 returns a single-use iterable rather than a List, but also the lack of convenient methods like .copy() and .clear(). It was also important that boolean contexts in v2 trigger classes' .\_\_nonzero\_\_ and ignore .\_\_bool\_\_. Finally, 'bytes' objects are used in gergorimage.py but, evidently, the differences between v2 and v3 here are hidden by the GLib.Bytes constructor into which they are fed. 
 - I attempted to use as much as possible the following encapsulation principle that I quite like and is related to the "double dual" from Linear Algebra: If class X has a method F that is to operate on the data D in a class Y, one should define a method .callF(_) for Y that performs _.F(Y.D) and accomplish the task via Y.callF(X).
-- The issues required to get simultaneous v2 and v3 compatibility were mostly related to Lists, especially implications of the fact that filter(_,_) in v3 returns a single-use iterable rather than a List, but also the lack of convenient methods like .copy() and .clear(). It was also important that boolean contexts in v2 trigger classes' .\_\_nonzero\_\_ and ignore .\_\_bool\_\_. Finally, 'bytes' objects are used in gergorimage.py but, evidently, the differences between v2 and v3 here are hidden by the GLib.Bytes constructor into which they are fed.
 
 
 KNOWN BUGS:
@@ -97,7 +96,7 @@ FOR THE FUTURE:
 
 
 CREDITS/ACKNOWLEDGEMENTS:
-- The basic idea for this game comes from the Gershgorin Circle Theorem (en.wikipedia.org/wiki/Gershgorin_circle_theorem) in Linear Algebra. More precisely, the idea came from the question of how the Gershgorin Region changes when the rows of the matrix are permuted. Sadly, calculating radii exactly as the theorem specifies does not produce a dynamic game, so the details were modified. 
+- The basic idea for this game comes from the Gershgorin Circle Theorem in Linear Algebra. More precisely, the idea came from the question of how the Gershgorin Region changes when the rows of the matrix are permuted. Sadly, calculating radii exactly as the theorem specifies does not produce a dynamic game, so the details were modified. 
 - I learned that PIL.Image could be painlessly converted to GdkPixbuf from gist.github.com/mozbugbox's "pixbuf2pillow" module. However, a modification was necessary -- see remarks in gergorimage.py. I warmly thank Christopher Reiter of gitlab.gnome.org/GNOME/pygobject for helping me to understand the issues surrounding .new_from_data and .new_from_bytes -- see remarks in gergorimage.py.
 - This program, including the GUI, was written using only gedit.
 
