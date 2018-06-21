@@ -1,0 +1,6 @@
+[caption for EXAMPLE4.png] 
+This is what happens if each player PASSes roughly 450 times. 
+The penalty for failure to capture an opponent's disc is that all non-focus entries in the matrix shrink slightly in size. 
+Quiz: What will happen if the players change strategy and start moving discs? 
+Probably you shouldn't PASS so many times...
+(the detail-oriented viewer will notice that the matrix here is 8x8 while the others are 9x9)

@@ -1,0 +1,4 @@
+[caption for EXAMPLE1.png]
+A typical view. 
+Certain entries in the matrix are bold -- each is the center, on the Horizontal Axis, of the disc corresponding to that row. 
+Four of this player's discs were already captured, and the corresponding rows are now filled with Sad Faces.
