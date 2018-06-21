@@ -1,1 +1,0 @@
-[caption for EXAMPLE2.png] Things are not going well for Team Green. Quiz: Which single move will rescue, at least temporarily, those two leftmost discs? The detail-oriented viewer will notice that, in this version of the game, the title of the window is default and not set to "GerGor".
