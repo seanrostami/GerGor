@@ -1,7 +1,7 @@
 _last updated Jun 28, 2018_ 
 
 
-_GerGor_ is a competitive two-player game inspired by the famous [Gershgorin Circle Theorem](https://en.wikipedia.org/wiki/Gershgorin_circle_theorem) from Linear Algebra. Each player has a collection of discs in a 2-dimensional plane; by quickly estimating sizes and positions of certain numbers in a matrix, and making an appropriate choice of entry, you transform your discs and try to capture your opponent's. 
+_GerGor_ is a competitive two-player game inspired by the famous [Gershgorin Circle Theorem](https://en.wikipedia.org/wiki/Gershgorin_circle_theorem) from Linear Algebra. Each player has a collection of discs in a 2-dimensional plane; by quickly estimating sizes and locations of certain numbers in a matrix, and making an appropriate choice of entry, you transform your discs and try to capture your opponent's. 
 
 ![SAMPLE](https://github.com/seanrostami/GerGor/raw/master/EXAMPLE1.png "a typical view (EXAMPLE1.png)") 
 
@@ -21,21 +21,13 @@ GerGor is written in Python, executes correctly as-is in both version 2.X (for r
 #### TABLE OF CONTENTS: ####
 
 1) System Requirements 
-
 2) Files 
-
 3) How to Start the Game 
-
 4) How to Play the Game (Rules) 
-
 5) How the Program Operates 
-
 6) Known Bugs 
-
 7) Future Plans
-
 8) Credits/Acknowledgements 
-
 9) Testing 
 
 
@@ -45,13 +37,13 @@ GerGor is written in Python, executes correctly as-is in both version 2.X (for r
 
 - GTK+ for Python (more correctly, the PyGObject package) 
 
-    _it is usually annoying to install PyGObject..._ 
+    _(it is usually annoying to install PyGObject...)_ 
 
 - the Pillow package for Python, a continuation of the PIL library 
 
 - playable on Linux, Windows, Mac if above requirements are satisfied 
 
-    _see the bottom of this README for a list of actual tests_ 
+    _(see the bottom of this README for a list of actual tests)_ 
 
 - seems to require about 25 MB of RAM at all times 
 
@@ -59,21 +51,13 @@ GerGor is written in Python, executes correctly as-is in both version 2.X (for r
 #### FILES: ####
 
 1) GERGOR.py		 (GUI, "main loop") 
-
 2) GERGORCALLBACKS.py	 (GTK+ signal-handlers) 
-
 3) GERGORCONFIG.py	 (configuration) 
-
 4) gergorcomm.py	 (class) 
-
 5) gergorimage.py	 (class) 
-
 6) gergormatrix.py	 (classes) 
-
 7) gergoranimation.py	 (class) 
-
 8) gergorpaintable.py	 (class) 
-
 9) GERGORICON.jpg	 (icon) 
 
 
@@ -83,17 +67,17 @@ GerGor is written in Python, executes correctly as-is in both version 2.X (for r
 
 2) each player runs GERGOR.py from any working directory (the other .py files should be in the same directory) 
 
-    _each user must have permission to create/read/write/delete a file in both working directories_ 
+    _(each user must have permission to create/read/write/delete a file in both working directories)_ 
 
 3) players communicate to each other their "connection info" (displayed at the top of each game window) 
 
 4) players enter their opponent's connection info into the game (near the top of the game window) 
 
-    _if both players are using the same computer, the only possibility at present, then connection info can be easily copied and pasted from one window to another_ 
+    _(if both players are using the same computer, the only possibility at present, then connection info can be easily copied and pasted from one window to another)_ 
 
 5) each player presses CONNECT (near the top of the game window) 
 
-    _see section "HOW THE PROGRAM OPERATES" below for an explanation of the seemingly oblique steps 3,4,5_ 
+    _(see section "HOW THE PROGRAM OPERATES" below for an explanation of the seemingly oblique steps 3,4,5)_ 
 
 6) one player (random) starts, and the players alternate turns thereafter until one wins 
 
@@ -150,21 +134,13 @@ GerGor is written in Python, executes correctly as-is in both version 2.X (for r
 #### FUTURE PLANS: ####
 
 - make images dynamically resizable (GtkWidget's screen-changed signal, modify IMGMAGNIFY) 
-
 - revisit constants in GERGORCONFIG.py, and gameplay in general 
-
 - improve the strategy of Autopilot (but not too much!) 
-
 - change communication from plaintext to raw binary? 
-
 - allow players to use different computers and communicate via internet (AWS server?) 
-
 - do we want hotkeys? 
-
 - add sounds? 
-
 - make the buttons of the matrix square? 
-
 - allow more than two players in one game? (via Hans Chaumont)
 
 
@@ -187,16 +163,16 @@ GerGor is written in Python, executes correctly as-is in both version 2.X (for r
 
 - Windows 10 Home (custom desktop), version 1709; Python 2.7.15, PyGObject 3.24.1, Pillow 5.1.0 
 
-    _PyGObject for Windows installed from sourceforge.net/projects/pygobjectwin32_
+    _(PyGObject for Windows installed from sourceforge.net/projects/pygobjectwin32)_
 
 - old Windows 7 (Dell netbook); Python 2.7.15, PyGObject 3.24.1, Pillow 5.1.0 
 
-    _PyGObject for Windows installed from sourceforge.net/projects/pygobjectwin32_
+    _(PyGObject for Windows installed from sourceforge.net/projects/pygobjectwin32)_
 
 - OS X 10.11.6 (MacBook Pro), Darwin 15.6.0; Python 3.6.5, PyGObject 3.28.3, Pillow 5.0.0 
 
 - OS X 10.11.6 (MacBook Pro), Darwin 15.6.0; Python 2.7.15, PyGObject 3.28.3, Pillow 5.0.0
 
-    _at this time, there seem to be issues with Pillow 5.1 on Macs so I demoted it to 5.0.0..._
+    _(at this time, there seem to be issues with Pillow 5.1 on Macs so I demoted it to 5.0.0...)_
 
-- MacOS 10.12.6 (Macbook Air), Darwin ???; Python 3.5.2, PyGObject 3.28.3, Pillow 3.2.0 
+- MacOS 10.12.6 (Macbook Air), Darwin 16.7.0; Python 3.5.2, PyGObject 3.28.3, Pillow 3.2.0 
