@@ -1,4 +1,4 @@
-from PIL import Image, ImageColor, ImageDraw
+from PIL import Image, ImageDraw
 
 from GERGORCONFIG import IMGHEIGHT, IMGWIDTH, IMGMAGNIFY, IMGPLANECOLOR, IMGAXISCOLOR, IMGAXISTHICKNESS, IMGOUTLINECOLOR, IMGCENTERDOTRADIUS
 
@@ -29,7 +29,7 @@ GerGorImage is ignorant of the gameplay details. For example, GerGorImage does n
 
 	def get_origin( self ):
 		"""[PRIVATE] This method, .get_origin, merely returns the screen coordinates of the point that players consider to be the origin: the intersection of the two axes."""
-		return self.Img.width // 2, self.Img.height // 2 # truncate to integer
+		return int( self.Img.width // 2 ), int( self.Img.height // 2 ) # truncate to integer
 
 	def reset( self ):
 		"""This method, .reset, merely writes axes on a blank background to self's PIL.Image graphics object. Usually (always?) this is done after the data of one or more discs changes and therefore must be redrawn. The data is not actually displayed -- this is done when desired by .flush method."""
@@ -66,4 +66,3 @@ GerGorImage is ignorant of the gameplay details. For example, GerGorImage does n
 # However, there were crashes because GdkPixbuf.Pixbuf.new_from_data has its own problems... cf. https://gitlab.gnome.org/GNOME/pygobject/issues/225 . 
 # Ultimately, simply passing pixbuf.copy() instead of pixbuf to GtkImage.set_from_pixbuf seems to allow garbage-collection to function properly and eliminates the memory leak. 
 # I warmly thank Christopher Reiter of https://gitlab.gnome.org/GNOME/pygobject/ for helping me to understand .new_from_data vs. .new_from_bytes and for suggesting the workaround. 
-
