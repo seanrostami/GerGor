@@ -1,11 +1,10 @@
-_last updated Jun 28, 2018_ 
-
+# GerGor
 
 _GerGor_ is a competitive two-player game inspired by the famous [Gershgorin Circle Theorem](https://en.wikipedia.org/wiki/Gershgorin_circle_theorem) from Linear Algebra. Each player has a collection of discs in a 2-dimensional plane; by quickly estimating sizes and locations of certain numbers in a matrix, and making an appropriate choice of entry, you transform your discs and try to capture your opponent's. 
 
 ![SAMPLE](https://github.com/seanrostami/GerGor/raw/master/EXAMPLE1.png "a typical view (EXAMPLE1.png)") 
 
-GerGor is written in Python, executes correctly as-is in both version 2.X (for reasonably high X) and version 3.X of Python, and runs on Linux, Windows, and Mac. The GUI is created with [GTK+](https://en.wikipedia.org/wiki/GTK) and the charming graphics are created with the [Pillow](http://python-pillow.org/) fork of the classic _Python Imaging Library_ [PIL](https://en.wikipedia.org/wiki/Python_Imaging_Library) library. 
+GerGor is written in Python, executes correctly as-is in both version 2.X (for reasonably high X) and version 3.X of Python, and runs on Linux, Windows, and Mac. The GUI is created with [GTK+](https://en.wikipedia.org/wiki/GTK) and the charming animations are created with the [Pillow](http://python-pillow.org/) fork of the classic _Python Imaging Library_ [PIL](https://en.wikipedia.org/wiki/Python_Imaging_Library) library. 
 
 
 #### AUTHOR(S): ####
@@ -133,7 +132,7 @@ GerGor is written in Python, executes correctly as-is in both version 2.X (for r
 
 #### FUTURE PLANS: ####
 
-- make images dynamically resizable (GtkWidget's screen-changed signal, modify IMGMAGNIFY) 
+- make images dynamically resizable
 - revisit constants in GERGORCONFIG.py, and gameplay in general 
 - improve the strategy of Autopilot (but not too much!) 
 - change communication from plaintext to raw binary? 
@@ -176,3 +175,6 @@ GerGor is written in Python, executes correctly as-is in both version 2.X (for r
     _(at this time, there seem to be issues with Pillow 5.1 on Macs so I demoted it to 5.0.0...)_
 
 - MacOS 10.12.6 (Macbook Air), Darwin 16.7.0; Python 3.5.2, PyGObject 3.28.3, Pillow 3.2.0 
+
+
+_last updated Jun 28, 2018_ 
